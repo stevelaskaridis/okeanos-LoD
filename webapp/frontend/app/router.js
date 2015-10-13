@@ -10,11 +10,10 @@ Router.map(function() {
   this.resource('user', function() {
 		// /user/login
 		this.route('login');
-  		// /user/logout
-  		this.route('logout');
-    // /user/clusters
-    this.route('clusters');
+		// /user/logout
+		this.route('logout');
 	});
+  this.resource('lambda-instances');
 });
 
 export default Router;
