@@ -1,6 +1,9 @@
 <h1>Listing Lambda Instances</h1>
 
 <table>
+  <td>id</td>
+  <td>name</td>
+  <td>actions</td>
 {{#each model as |lambda-instance|}}
 <tr class="instance-info">
   <td>{{lambda-instance.uuid}}</td>
@@ -9,6 +12,9 @@
   {{#if lambda-instance.failure_message}}
     <td>{{lambda-instance.failure_message}}</td>
   {{/if}}
+  <td>
+    <button name="del-btn" id="del-btn" class="action-btn" {{action 'delete' lambda-instance}}>Delete</button>
+  </td>
 </tr>
 {{else}}
   No lambda instances under ownership.
