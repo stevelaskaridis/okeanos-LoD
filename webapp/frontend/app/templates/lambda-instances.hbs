@@ -1,10 +1,12 @@
 <h1>Listing Lambda Instances</h1>
 
+<p> Total Pages {{pagedContent.totalPages}} </p>
+
 <table>
   <td>id</td>
   <td>name</td>
   <td>actions</td>
-{{#each model as |lambda-instance|}}
+{{#each pagedContent as |lambda-instance|}}
 <tr class="instance-info">
   <td>{{lambda-instance.uuid}}</td>
   <td>{{lambda-instance.name}}</td>
@@ -19,4 +21,6 @@
 {{else}}
   No lambda instances under ownership.
 {{/each}}
+
+{{page-numbers content=pagedContent currentPage=page totalPages=totalPages showFL=true}}
 </table>
